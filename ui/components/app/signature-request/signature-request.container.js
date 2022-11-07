@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import {
   accountsWithSendEtherInfoSelector,
   doesAddressRequireLedgerHidConnection,
+  getCurrentChainId,
 } from '../../../selectors';
 import { isAddressLedger } from '../../../ducks/metamask/metamask';
 import { getAccountByAddress } from '../../../helpers/utils/util';
@@ -16,17 +17,19 @@ function mapStateToProps(state, ownProps) {
   const hardwareWalletRequiresConnection =
     doesAddressRequireLedgerHidConnection(state, from);
   const isLedgerWallet = isAddressLedger(state, from);
+  const chainId = getCurrentChainId(state);
 
   return {
     isLedgerWallet,
     hardwareWalletRequiresConnection,
+    chainId,
     // not forwarded to component
     allAccounts: accountsWithSendEtherInfoSelector(state),
   };
 }
 
 function mergeProps(stateProps, dispatchProps, ownProps) {
-  const { allAccounts, isLedgerWallet, hardwareWalletRequiresConnection } =
+  const { allAccounts, isLedgerWallet, hardwareWalletRequiresConnection, chainId } =
     stateProps;
   const {
     signPersonalMessage,
@@ -68,6 +71,7 @@ function mergeProps(stateProps, dispatchProps, ownProps) {
     sign,
     isLedgerWallet,
     hardwareWalletRequiresConnection,
+    chainId,
   };
 }
 
