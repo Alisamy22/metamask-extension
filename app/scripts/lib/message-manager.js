@@ -30,7 +30,7 @@ export default class MessageManager extends EventEmitter {
    * @param {object} opts - Controller options
    * @param {Function} opts.metricsEvent - A function for emitting a metric event.
    */
-  constructor({ metricsEvent }) {
+  constructor({ metricsEvent, securityProviderRequest }) {
     super();
     this.memStore = new ObservableStore({
       unapprovedMsgs: {},
@@ -38,6 +38,7 @@ export default class MessageManager extends EventEmitter {
     });
     this.messages = [];
     this.metricsEvent = metricsEvent;
+    this.securityProviderRequest = securityProviderRequest;
   }
 
   /**
@@ -110,7 +111,7 @@ export default class MessageManager extends EventEmitter {
    * @param {object} [req] - The original request object where the origin may be specified
    * @returns {number} The id of the newly created message.
    */
-  addUnapprovedMessage(msgParams, req) {
+  async addUnapprovedMessage(msgParams, req) {
     // add origin from request
     if (req) {
       msgParams.origin = req.origin;
@@ -127,6 +128,8 @@ export default class MessageManager extends EventEmitter {
       type: MESSAGE_TYPE.ETH_SIGN,
     };
     this.addMsg(msgData);
+
+    await this.securityProviderRequest(msgData, msgData.type);
 
     // signal update
     this.emit('update');
