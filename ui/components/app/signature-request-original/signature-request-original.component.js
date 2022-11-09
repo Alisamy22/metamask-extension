@@ -14,6 +14,7 @@ import { stripHexPrefix } from '../../../../shared/modules/hexstring-utils';
 import Button from '../../ui/button';
 import SiteIcon from '../../ui/site-icon';
 import SiteOrigin from '../../ui/site-origin';
+
 export default class SignatureRequestOriginal extends Component {
   static contextTypes = {
     t: PropTypes.func.isRequired,
@@ -45,7 +46,6 @@ export default class SignatureRequestOriginal extends Component {
 
   state = {
     fromAccount: this.props.fromAccount,
-    isSignatureMalicious: 0,
   };
 
   renderHeader = () => {
@@ -346,7 +346,7 @@ export default class SignatureRequestOriginal extends Component {
     const { t } = this.context;
     const rejectNText = t('rejectTxsN', [messagesCount]);
 
-    console.log("HERE");
+    console.log('HERE');
     console.log('txData: ', this.props.txData);
 
     return (

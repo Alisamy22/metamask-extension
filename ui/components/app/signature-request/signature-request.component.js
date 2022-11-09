@@ -48,7 +48,6 @@ export default class SignatureRequest extends PureComponent {
 
   state = {
     hasScrolledMessage: false,
-    isSignatureMalicious: 0,
   };
 
   setMessageRootRef(ref) {
@@ -78,7 +77,7 @@ export default class SignatureRequest extends PureComponent {
     const { message, domain = {}, primaryType, types } = JSON.parse(data);
     const { trackEvent } = this.context;
 
-    console.log("HERE");
+    console.log('HERE');
     console.log('txData: ', this.props.txData);
 
     const onSign = (event) => {
