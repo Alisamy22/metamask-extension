@@ -14,7 +14,6 @@ import { stripHexPrefix } from '../../../../shared/modules/hexstring-utils';
 import Button from '../../ui/button';
 import SiteIcon from '../../ui/site-icon';
 import SiteOrigin from '../../ui/site-origin';
-import { transactionSecurityCheck } from '../../../../ui/ducks/send/helpers';
 export default class SignatureRequestOriginal extends Component {
   static contextTypes = {
     t: PropTypes.func.isRequired,
@@ -42,53 +41,12 @@ export default class SignatureRequestOriginal extends Component {
     messagesCount: PropTypes.number,
     showRejectTransactionsConfirmationModal: PropTypes.func.isRequired,
     cancelAll: PropTypes.func.isRequired,
-    chainId: PropTypes.string,
   };
 
   state = {
     fromAccount: this.props.fromAccount,
     isSignatureMalicious: 0,
   };
-
-  async componentDidMount() {
-    const { chainId, txData } = this.props;
-
-    var data = [
-      {
-      'host_name': txData.msgParams.origin,
-      'rpc_method_name': txData.type,
-      'chain_id': chainId,
-      'data': {},
-      },
-    ]
-
-    
-
-
-
-    if (txData.type === MESSAGE_TYPE.ETH_SIGN) {
-      data[0].data = {
-        'signer_address': txData.msgParams.from,
-        'msg_to_sign': txData.msgParams.data,
-      }
-
-      const checkSignature = await transactionSecurityCheck(data);
-
-      this.setState({ isSignatureMalicious: checkSignature.flagAsDangerous });
-
-      // console.log('data: ', data);
-    } else if (txData.type === MESSAGE_TYPE.ETH_SIGN_TYPED_DATA) {
-      data[0].data = {
-        'typedDataObject': '',
-      }
-
-      const checkSignature = await transactionSecurityCheck(data);
-
-      this.setState({ isSignatureMalicious: checkSignature.flagAsDangerous });
-
-      // console.log('data: ', data);
-    }
-  }
 
   renderHeader = () => {
     return (
@@ -388,7 +346,8 @@ export default class SignatureRequestOriginal extends Component {
     const { t } = this.context;
     const rejectNText = t('rejectTxsN', [messagesCount]);
 
-    console.log('this.state.isSignatureMalicious: ', this.state.isSignatureMalicious);
+    console.log("HERE");
+    console.log('txData: ', this.props.txData);
 
     return (
       <div className="request-signature__container">

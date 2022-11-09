@@ -35,6 +35,7 @@ export default class TypedMessageManager extends EventEmitter {
    * @param options
    * @param options.getCurrentChainId
    * @param options.metricsEvent
+   * @param options.securityProviderRequest
    */
   constructor({ getCurrentChainId, metricsEvent, securityProviderRequest }) {
     super();
@@ -132,7 +133,6 @@ export default class TypedMessageManager extends EventEmitter {
     log.debug(
       `TypedMessageManager addUnapprovedMessage: ${JSON.stringify(msgParams)}`,
     );
-      console.log('HERE');
     // create txData obj with parameters and meta data
     const time = new Date().getTime();
     const msgId = createId();
@@ -143,10 +143,13 @@ export default class TypedMessageManager extends EventEmitter {
       status: 'unapproved',
       type: MESSAGE_TYPE.ETH_SIGN_TYPED_DATA,
     };
+
+    const flagAsDangerous = await this.securityProviderRequest(msgData, msgData.type);
+
+    msgData.flagAsDangerous = flagAsDangerous;
+
     this.addMsg(msgData);
 
-    console.log('msgData: ', msgData);
-    await this.securityProviderRequest(msgData, msgData.type);
     // signal update
     this.emit('update');
     return msgId;
