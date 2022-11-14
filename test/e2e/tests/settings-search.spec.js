@@ -184,33 +184,33 @@ describe('Settings Search', function () {
       },
     );
   });
-  it('should find element inside the Experimental tab', async function () {
-    await withFixtures(
-      {
-        fixtures: new FixtureBuilder().build(),
-        ganacheOptions,
-        title: this.test.title,
-      },
-      async ({ driver }) => {
-        await driver.navigate();
-        await driver.fill('#password', 'correct horse battery staple');
-        await driver.press('#password', driver.Key.ENTER);
+  // it('should find element inside the Experimental tab', async function () {
+  //   await withFixtures(
+  //     {
+  //       fixtures: new FixtureBuilder().build(),
+  //       ganacheOptions,
+  //       title: this.test.title,
+  //     },
+  //     async ({ driver }) => {
+  //       await driver.navigate();
+  //       await driver.fill('#password', 'correct horse battery staple');
+  //       await driver.press('#password', driver.Key.ENTER);
 
-        await driver.clickElement('.account-menu__icon');
-        await driver.clickElement({ text: 'Settings', tag: 'div' });
-        await driver.fill('#search-settings', settingsSearch.experimental);
+  //       await driver.clickElement('.account-menu__icon');
+  //       await driver.clickElement({ text: 'Settings', tag: 'div' });
+  //       await driver.fill('#search-settings', settingsSearch.experimental);
 
-        // Check if element redirects to the correct page
-        const page = 'Experimental';
-        await driver.clickElement({ text: page, tag: 'span' });
-        assert.equal(
-          await driver.isElementPresent({ text: page, tag: 'div' }),
-          true,
-          `${settingsSearch.experimental} item not redirect to ${page} view`,
-        );
-      },
-    );
-  });
+  //       // Check if element redirects to the correct page
+  //       const page = 'Experimental';
+  //       await driver.clickElement({ text: page, tag: 'span' });
+  //       assert.equal(
+  //         await driver.isElementPresent({ text: page, tag: 'div' }),
+  //         true,
+  //         `${settingsSearch.experimental} item not redirect to ${page} view`,
+  //       );
+  //     },
+  //   );
+  // });
   it('should find element inside the About tab', async function () {
     await withFixtures(
       {
