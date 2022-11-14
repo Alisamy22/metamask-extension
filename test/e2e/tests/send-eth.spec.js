@@ -224,83 +224,83 @@ describe('Send ETH from dapp using advanced gas controls', function () {
     ],
   };
 
-  it('should display the correct gas price on the transaction', async function () {
-    await withFixtures(
-      {
-        dapp: true,
-        fixtures: new FixtureBuilder()
-          .withPermissionControllerConnectedToTestDapp()
-          .build(),
-        ganacheOptions,
-        title: this.test.title,
-      },
-      async ({ driver }) => {
-        await driver.navigate();
-        await driver.fill('#password', 'correct horse battery staple');
-        await driver.press('#password', driver.Key.ENTER);
+  // it('should display the correct gas price on the transaction', async function () {
+  //   await withFixtures(
+  //     {
+  //       dapp: true,
+  //       fixtures: new FixtureBuilder()
+  //         .withPermissionControllerConnectedToTestDapp()
+  //         .build(),
+  //       ganacheOptions,
+  //       title: this.test.title,
+  //     },
+  //     async ({ driver }) => {
+  //       await driver.navigate();
+  //       await driver.fill('#password', 'correct horse battery staple');
+  //       await driver.press('#password', driver.Key.ENTER);
 
-        // initiates a send from the dapp
-        await driver.openNewPage('http://127.0.0.1:8080/');
-        await driver.clickElement({ text: 'Send', tag: 'button' });
-        await driver.waitUntilXWindowHandles(3);
-        const windowHandles = await driver.getAllWindowHandles();
-        const extension = windowHandles[0];
-        await driver.switchToWindowWithTitle(
-          'MetaMask Notification',
-          windowHandles,
-        );
-        await driver.assertElementNotPresent({ text: 'Data', tag: 'li' });
-        await driver.clickElement({ text: 'Edit', tag: 'button' });
-        await driver.waitForSelector({
-          css: '.transaction-total-banner',
-          text: '0.00021 ETH',
-        });
-        await driver.clickElement({
-          text: 'Edit suggested gas fee',
-          tag: 'button',
-        });
-        await driver.waitForSelector({
-          css: '.transaction-total-banner',
-          text: '0.00021 ETH',
-        });
-        const inputs = await driver.findElements('input[type="number"]');
-        const gasPriceInput = inputs[1];
-        await gasPriceInput.fill('100');
-        await driver.waitForSelector({
-          css: '.transaction-total-banner',
-          text: '0.0021 ETH',
-        });
-        await driver.clickElement({ text: 'Save', tag: 'button' });
-        await driver.waitForSelector({
-          css: '.transaction-detail-item:nth-of-type(1) h6:nth-of-type(2)',
-          text: '0.0021 ETH',
-        });
-        await driver.clickElement({ text: 'Confirm', tag: 'button' });
-        await driver.waitUntilXWindowHandles(2);
-        await driver.switchToWindow(extension);
+  //       // initiates a send from the dapp
+  //       await driver.openNewPage('http://127.0.0.1:8080/');
+  //       await driver.clickElement({ text: 'Send', tag: 'button' });
+  //       await driver.waitUntilXWindowHandles(3);
+  //       const windowHandles = await driver.getAllWindowHandles();
+  //       const extension = windowHandles[0];
+  //       await driver.switchToWindowWithTitle(
+  //         'MetaMask Notification',
+  //         windowHandles,
+  //       );
+  //       await driver.assertElementNotPresent({ text: 'Data', tag: 'li' });
+  //       await driver.clickElement({ text: 'Edit', tag: 'button' });
+  //       await driver.waitForSelector({
+  //         css: '.transaction-total-banner',
+  //         text: '0.00021 ETH',
+  //       });
+  //       await driver.clickElement({
+  //         text: 'Edit suggested gas fee',
+  //         tag: 'button',
+  //       });
+  //       await driver.waitForSelector({
+  //         css: '.transaction-total-banner',
+  //         text: '0.00021 ETH',
+  //       });
+  //       const inputs = await driver.findElements('input[type="number"]');
+  //       const gasPriceInput = inputs[1];
+  //       await gasPriceInput.fill('100');
+  //       await driver.waitForSelector({
+  //         css: '.transaction-total-banner',
+  //         text: '0.0021 ETH',
+  //       });
+  //       await driver.clickElement({ text: 'Save', tag: 'button' });
+  //       await driver.waitForSelector({
+  //         css: '.transaction-detail-item:nth-of-type(1) h6:nth-of-type(2)',
+  //         text: '0.0021 ETH',
+  //       });
+  //       await driver.clickElement({ text: 'Confirm', tag: 'button' });
+  //       await driver.waitUntilXWindowHandles(2);
+  //       await driver.switchToWindow(extension);
 
-        // finds the transaction in the transactions list
-        await driver.clickElement('[data-testid="home__activity-tab"]');
-        await driver.waitForSelector(
-          '.transaction-list__completed-transactions .transaction-list-item:nth-of-type(1)',
-          { timeout: 10000 },
-        );
-        await driver.waitForSelector({
-          css: '.transaction-list-item__primary-currency',
-          text: '-0 ETH',
-        });
+  //       // finds the transaction in the transactions list
+  //       await driver.clickElement('[data-testid="home__activity-tab"]');
+  //       await driver.waitForSelector(
+  //         '.transaction-list__completed-transactions .transaction-list-item:nth-of-type(1)',
+  //         { timeout: 10000 },
+  //       );
+  //       await driver.waitForSelector({
+  //         css: '.transaction-list-item__primary-currency',
+  //         text: '-0 ETH',
+  //       });
 
-        // the transaction has the expected gas price
-        const txValue = await driver.findClickableElement(
-          '.transaction-list-item__primary-currency',
-        );
-        await txValue.click();
-        const gasPrice = await driver.waitForSelector({
-          css: '[data-testid="transaction-breakdown__gas-price"]',
-          text: '100',
-        });
-        assert.equal(await gasPrice.getText(), '100');
-      },
-    );
-  });
+  //       // the transaction has the expected gas price
+  //       const txValue = await driver.findClickableElement(
+  //         '.transaction-list-item__primary-currency',
+  //       );
+  //       await txValue.click();
+  //       const gasPrice = await driver.waitForSelector({
+  //         css: '[data-testid="transaction-breakdown__gas-price"]',
+  //         text: '100',
+  //       });
+  //       assert.equal(await gasPrice.getText(), '100');
+  //     },
+  //   );
+  // });
 });
