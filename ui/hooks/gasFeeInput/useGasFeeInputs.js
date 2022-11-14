@@ -41,7 +41,7 @@ import { useTransactionFunctions } from './useTransactionFunctions';
 
 /**
  * @typedef {object} GasFeeInputReturnType
- * @property {Object} [transaction] - .
+ * @property {object} [transaction] - .
  * @property {DecGweiString} [maxFeePerGas] - the maxFeePerGas input value.
  * @property {DecGweiString} [maxPriorityFeePerGas] - the maxPriorityFeePerGas
  *  input value.
