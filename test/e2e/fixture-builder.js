@@ -492,7 +492,7 @@ class FixtureBuilder {
         latestPriorityFeeRange: ['1', '40'],
         historicalPriorityFeeRange: ['0.1458417', '700.156384646'],
         priorityFeeTrend: 'down',
-        networkCongestion: 0.66,
+        networkCongestion: 0.9,
       },
     });
     return this;

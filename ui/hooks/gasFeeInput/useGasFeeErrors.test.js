@@ -181,7 +181,7 @@ describe('useGasFeeErrors', () => {
     });
   });
 
-  describe('maxPriorityFee gasErrors', () => {
+  describe('maxPriorityFee gasErrors (derived from warnings)', () => {
     describe('EIP1559 compliant estimates', () => {
       beforeEach(() => {
         configureEIP1559();
