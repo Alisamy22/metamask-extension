@@ -41,37 +41,39 @@ import { useTransactionFunctions } from './useTransactionFunctions';
 
 /**
  * @typedef {object} GasFeeInputReturnType
+ * @property {Object} [transaction] - .
  * @property {DecGweiString} [maxFeePerGas] - the maxFeePerGas input value.
- * @property {string} [maxFeePerGasFiat] - the maxFeePerGas converted to the
- *  user's preferred currency.
- * @property {(DecGweiString) => void} setMaxFeePerGas - state setter method to
- *  update the maxFeePerGas.
  * @property {DecGweiString} [maxPriorityFeePerGas] - the maxPriorityFeePerGas
  *  input value.
- * @property {string} [maxPriorityFeePerGasFiat] - the maxPriorityFeePerGas
- *  converted to the user's preferred currency.
- * @property {(DecGweiString) => void} setMaxPriorityFeePerGas - state setter
- *  method to update the maxPriorityFeePerGas.
  * @property {DecGweiString} [gasPrice] - the gasPrice input value.
  * @property {(DecGweiString) => void} setGasPrice - state setter method to
  *  update the gasPrice.
  * @property {DecGweiString} gasLimit - the gasLimit input value.
  * @property {(DecGweiString) => void} setGasLimit - state setter method to
  *  update the gasLimit.
+ * @property {DecGweiString} [properGasLimit] - proper gas limit.
+ * @property {string} [editGasMode] - one of CANCEL, SPEED-UP, MODIFY_IN_PLACE, SWAPS.
  * @property {EstimateLevel} [estimateToUse] - the estimate level currently
- *  selected. This will be null if the user has ejected from using the
- *  estimates.
- * @property {([EstimateLevel]) => void} setEstimateToUse - Setter method for
- *  choosing which EstimateLevel to use.
- * @property {string} [estimatedMinimumFiat] - The amount estimated to be paid
- *  based on current network conditions. Expressed in user's preferred
- *  currency.
- * @property {string} [estimatedMaximumFiat] - the maximum amount estimated to be
- *  paid if current network transaction volume increases. Expressed in user's
- *  preferred currency.
- * @property {string} [estimatedMaximumNative] - the maximum amount estimated to
- *  be paid if the current network transaction volume increases. Expressed in
- *  the network's native currency.
+ *  selected. This will be null if the user has ejected from using the estimates.
+ * @property {boolean} [isGasEstimatesLoading] - true if gas estimate is loading.
+ * @property {DecGweiString} [maximumCostInHexWei] - maximum cost of transaction in HexWei.
+ * @property {DecGweiString} [minimumCostInHexWei] - minimum cost of transaction in HexWei.
+ * @property {string} [estimateUsed] - estimate used in the transaction.
+ * @property {boolean} [isNetworkBusy] - true if network is busy.
+ * @property {() => void} [onManualChange] - function to call when transaciton is manually changed.
+ * @property {DecGweiString} [estimatedBaseFee] - estimated base free for transaction.
+ * @property {boolean} [balanceError] - true if user balance is less than transaction value.
+ * @property {boolean} [hasGasErrors] - true if there are gas errors.
+ * @property {boolean} [hasSimulationError] - true if simulation error exists.
+ * @property {number} [minimumGasLimitDec] - minimum gas limit in decimals.
+ * @property {boolean} [supportsEIP1559] - true if EIP1559 is cupported.
+ * @property {() => void} cancelTransaction - cancel the transaction.
+ * @property {() => void} speedUpTransaction - speed up the transaction.
+ * @property {(string, number, number, number, string) => void} updateTransaction - update the transaction.
+ * @property {(boolean) => void} updateTransactionToTenPercentIncreasedGasFee - update the cancel / speed transaction to
+ * gas fee which is equal to current gas fee +10 percent.
+ * @property {(string) => void} updateTransactionUsingDAPPSuggestedValues - update the transaction to DAPP suggested gas value.
+ * @property {(string) => void} updateTransactionUsingEstimate - update the transaction using the estimate passed.
  */
 
 /**

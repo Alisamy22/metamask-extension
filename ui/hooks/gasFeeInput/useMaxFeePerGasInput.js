@@ -17,10 +17,8 @@ const getMaxFeePerGasFromTransaction = (transaction, gasFeeEstimates) => {
 
 /**
  * @typedef {object} MaxFeePerGasInputReturnType
- * @property {(DecGweiString) => void} setMaxFeePerGas - state setter method to
- *  update the maxFeePerGas.
- * @property {string} [maxFeePerGasFiat] - the maxFeePerGas converted to the
- *  user's preferred currency.
+ * @property {(DecGweiString) => void} setMaxFeePerGas - state setter method to update the maxFeePerGas.
+ * @property {string} [maxFeePerGas] - getter method for maxFeePerGas.
  */
 
 /**
