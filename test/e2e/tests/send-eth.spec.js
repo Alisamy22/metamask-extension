@@ -213,7 +213,7 @@ describe('Send ETH from inside MetaMask using advanced gas modal', function () {
   });
 });
 
-describe.only('Send ETH from dapp using advanced gas controls', function () {
+describe('Send ETH from dapp using advanced gas controls', function () {
   const ganacheOptions = {
     accounts: [
       {
