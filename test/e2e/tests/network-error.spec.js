@@ -18,7 +18,6 @@ describe('Gas API fallback', function () {
     await withFixtures(
       {
         fixtures: new FixtureBuilder().withNetworkCongestion().build(),
-        testSpecificMock: mockGasApiDown,
         ganacheOptions,
         title: this.test.title,
       },
