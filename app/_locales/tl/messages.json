@@ -47,9 +47,18 @@
   "SIWEAddressInvalid": {
     "message": "Ang address sa request sa pag-sign in ay hindi tugma sa address ng account na ginagamit mo sa pag-sign in."
   },
+  "SIWEDomainInvalidText": {
+    "message": "Ang site kung saan mo sinusubukang mag-sign in ay hindi tugma sa domain sa request. Magpatuloy nang may pag-iingat."
+  },
+  "SIWEDomainInvalidTitle": {
+    "message": "Request ng mapanlinlang na site."
+  },
   "SIWEDomainWarningBody": {
     "message": "Hinihiling sa iyo ng website ($1) na mag-sign in sa maling domain. Posibleng phishing na pag-atake ito.",
     "description": "$1 represents the website domain"
+  },
+  "SIWEDomainWarningLabel": {
+    "message": "Hindi ligtas"
   },
   "SIWELabelChainID": {
     "message": "Chain ID:"
@@ -405,7 +414,7 @@
     "message": "I-back up na"
   },
   "backupUserData": {
-    "message": "I-backup ang iyong datos"
+    "message": "I-back up ang iyong datos"
   },
   "backupUserDataDescription": {
     "message": "Maaari mong i-backup ang mga setting ng user na naglalaman ng mga kagustuhan at mga address ng account mula sa isang JSON file."
@@ -485,7 +494,7 @@
     "message": "Busy"
   },
   "buy": {
-    "message": "Bilhin"
+    "message": "Bumili"
   },
   "buyAsset": {
     "message": "Bumili ng $1",
@@ -513,6 +522,9 @@
   "buyCryptoWithTransakDescription": {
     "message": "Suportado ng Transak ang mga credit at debit card, Apple Pay, MobiKwik, at mga bank transfer (depende sa lokasyon) sa higit 100 bansa. Ang $1 ay direktang madedeposito sa iyong MetaMask account.",
     "description": "$1 represents the crypto symbol to be purchased"
+  },
+  "buyNow": {
+    "message": "Bilhin Ngayon"
   },
   "buyWithWyre": {
     "message": "Bumili ng $1 gamit ang Wyre"
@@ -675,10 +687,10 @@
     "message": "Mayroon kang 1 account na nakakonekta sa site na ito."
   },
   "connectedAccountsEmptyDescription": {
-    "message": "Ang MetaMask ay hindi nakakonekta sa site na ito. Para kumonekta sa isang web3 site, hanapin ang button na kumonekta sa site nila."
+    "message": "Ang MetaMask ay hindi konektado sa site na ito. Upang kumonekta sa isang web3 site, hanapin at i-click ang button na kumonekta."
   },
   "connectedSites": {
-    "message": "Mga nakakonektang site"
+    "message": "Mga konektadong site"
   },
   "connectedSitesDescription": {
     "message": "Ang $1 ay nakakonekta sa mga site na ito. Matitingnan nila ang address ng iyong account.",
@@ -761,6 +773,9 @@
   "convertTokenToNFTExistDescription": {
     "message": "Napansin namin na naidagdag ang asset na ito bilang NFT. Gusto mo ba itong alisin mula sa listahan ng iyong token?"
   },
+  "coolWallet": {
+    "message": "CoolWallet"
+  },
   "copiedExclamation": {
     "message": "Nakopya na!"
   },
@@ -811,6 +826,9 @@
   },
   "currentLanguage": {
     "message": "Kasalukuyang wika"
+  },
+  "currentRpcUrlDeprecated": {
+    "message": "Hindi na ginagamit ang kasalukuyang rpc url para sa network na ito."
   },
   "currentTitle": {
     "message": "Current:"
@@ -883,6 +901,9 @@
   },
   "dataHex": {
     "message": "Hex"
+  },
+  "dcent": {
+    "message": "D'Cent"
   },
   "decimal": {
     "message": "Decimal na token"
@@ -986,6 +1007,9 @@
   },
   "downloadGoogleChrome": {
     "message": "I-download ang Google Chrome"
+  },
+  "downloadNow": {
+    "message": "I-download Ngayon"
   },
   "downloadSecretBackup": {
     "message": "I-download ang Lihim na Parirala sa Pag-back up na ito at panatilihin itong naka-store nang ligtas sa isang external na naka-encrypt na hard drive o storage medium."
@@ -1208,13 +1232,13 @@
     "description": "$1 is the return value of eth_chainId from an RPC endpoint"
   },
   "enhancedTokenDetection": {
-    "message": "Pinahusay na pagtuklas ng token"
+    "message": "Pinahusay na pagtukoy ng token"
   },
   "enhancedTokenDetectionAlertMessage": {
     "message": "Ang pinahusay na pagtuklas ng token ay kasalukuyang magagamit sa $1. $2"
   },
   "enhancedTokenDetectionDescription": {
-    "message": "Pinagsasama-sama ng ConsenSys' token API ang isang listahan ng mga token mula sa iba't ibang listahan ng token ng third party. Kapag naka-on, ang mga token ay awtomatikong matutukoy, at mahahanap, sa Ethereum mainnet, Binance, Polygon at Avalanche. Kapag naka-off, ang awtomatikong pagtuklas at paghahanap ay maaari lamang gawin sa Ethereum mainnet."
+    "message": "Pinagsasama-sama ng ConsenSys' token API ang isang listahan ng mga token mula sa iba't ibang listahan ng token ng third-party. Kapag naka-on, ang mga token ay kusang matutukoy at mahahanap sa Ethereum mainnet, Binance, Polygon, at Avalanche. Kapag naka-off, ang kusang pagtuklas at paghahanap ay maaari lamang gawin sa Ethereum mainnet."
   },
   "ensIllegalCharacter": {
     "message": "Mga ilegal na character para sa ENS."
@@ -1230,6 +1254,9 @@
   },
   "ensUnknownError": {
     "message": "Bigong makita ang ENS."
+  },
+  "enterANumber": {
+    "message": "Maglagay ng numero"
   },
   "enterMaxSpendLimit": {
     "message": "Ilagay ang max na limitasyon sa paggastos"
@@ -1501,7 +1528,7 @@
     "message": "Kunin ang Ether"
   },
   "getEtherFromFaucet": {
-    "message": "Kunin ang Ether mula sa isang faucet sa halagang $1",
+    "message": "Kunin ang Ether mula sa isang faucet para sa network na $1.",
     "description": "Displays network name for Ether faucet"
   },
   "getStarted": {
@@ -1571,7 +1598,7 @@
     "description": "$1 is the symbol for a token (e.g. 'DAI')"
   },
   "hideZeroBalanceTokens": {
-    "message": "I-hide ang mga Token na Walang Balanse"
+    "message": "Itago ang mga token na walang balanse"
   },
   "high": {
     "message": "Agresibo"
@@ -1639,7 +1666,7 @@
     "message": "Sinumang ay maaaring lumikha ng token gamit ang alinmang pangalan, kabilang ang mga pekeng bersyon ng umiiral na mga token. Magdagdag at mag-trade sa sarili mong panganib!"
   },
   "importTokens": {
-    "message": "mag-import ng mga token"
+    "message": "magdagdag ng mga token"
   },
   "importTokensCamelCase": {
     "message": "Mag-import ng mga Token"
@@ -1667,6 +1694,16 @@
   },
   "initialTransactionConfirmed": {
     "message": "Nakumpirma na ng network ang iyong inisyal na transaksyon. I-click ang OK para bumalik."
+  },
+  "inputLogicEmptyState": {
+    "message": "Maglagay lamang ng numero na komportable kang gastusin ng kontrata ngayon o sa hinaharap. Palagi mong madadagdagan ang limitasyon sa paggastos sa ibang pagkakataon."
+  },
+  "inputLogicEqualOrSmallerNumber": {
+    "message": "Pinapayagan nito ang kontrata na gumastos ng $1 mula sa iyong kasalukuyang balanse.",
+    "description": "$1 is the current token balance in the account and the name of the current token"
+  },
+  "inputLogicHigherNumber": {
+    "message": "Pinapayagan nito ang kontrata na gastusin ang lahat ng balanse ng iyong token hanggang sa maabot nito ang limitasyon o ipawalang-bisa ang limitasyon sa paggastos. Kung hindi ito sinasadya, isaalang-alang na magtakda ng mas mababang limitasyon sa paggastos."
   },
   "install": {
     "message": "I-install"
@@ -1751,10 +1788,10 @@
     "message": "Gateway na IPFS"
   },
   "ipfsGatewayDescription": {
-    "message": "Ilagay ang URL ng IPFS CID gateway para magamit para sa resolusyon ng content ng ENS."
+    "message": "Ilagay ang URL ng IPFS CID gateway na gagamitin para sa ENS content resolution."
   },
   "jazzAndBlockies": {
-    "message": "Ang Jazzicons at Blockies ay dalawang magkaibang istilo ng mga natatanging icon na makakatulong sa iyong matukoy ang account sa isang sulyap."
+    "message": "Ang mga Jazzicon at Blockies ay dalawang magkaibang istilo ng mga natatanging icon na makakatulong sa iyong makilala ang isang account sa isang sulyap."
   },
   "jazzicons": {
     "message": "Mga Jazzicon"
@@ -1789,7 +1826,7 @@
     "message": "matuto pa"
   },
   "learnMoreAboutGas": {
-    "message": "Gusto mo bang $1 ang tungkol sa gas?",
+    "message": "Gusto mo bang $1 tungkol sa gas?",
     "description": "$1 will be replaced by the learnMore translation key"
   },
   "learnMoreUpperCase": {
@@ -2043,7 +2080,7 @@
     "message": "Hilingin dito"
   },
   "missingToken": {
-    "message": "Hindi makita ang token mo?"
+    "message": "Hindi mo ba nakikita ang iyong mga token?"
   },
   "mobileSyncWarning": {
     "message": "Ang feature na 'I-sync gamit ang extension' ay pansamantalang hindi gumagana. Kung gusto mong gamitin ang iyong extension wallet sa MetaMask mobile, pagkatapos ay sa iyong mobile app: bumalik sa mga opsyon sa pag-setup ng wallet at piliin ang opsyong 'Mag-import gamit ang Secret Recovery Phrase'. Gamitin ang lihim na parirala ng iyong extension wallet upang pagkatapos ay i-import ang iyong wallet sa mobile."
@@ -2066,7 +2103,7 @@
     "description": "$1 represents the cypto symbol to be purchased"
   },
   "needHelp": {
-    "message": "Kailangan ng tulong? Kontakin ang $1",
+    "message": "Kailangan ng tulong? Makipag-ugnayan sa $1",
     "description": "$1 represents `needHelpLinkText`, the text which goes in the help link"
   },
   "needHelpFeedback": {
@@ -2256,10 +2293,10 @@
     "message": "Nonce"
   },
   "nonceField": {
-    "message": "I-customize ang transaksyon nang isang beses"
+    "message": "I-customize ang transaksyon nonce"
   },
   "nonceFieldDescription": {
-    "message": "I-on ito para baguhin ang nonce (numero ng transaksyon) sa mga screen ng kumpirmasyon. Isa itong advanced na feature, gamitin nang may pag-iingat."
+    "message": "I-on ito para baguhin ang nonce (numero ng transaksyon) sa mga screen ng kumpirmasyon. Ito ay isang advanced na tampok, gamitin nang maingat."
   },
   "nonceFieldHeading": {
     "message": "Custom na nonce"
@@ -2284,7 +2321,7 @@
     "message": "Ang pinahusay na pagtukoy ng token ay kasalukuyang magagamit sa Ethereum Mainnet, Polygon, BSC, at mga Avalanche network. Marami pang darating!"
   },
   "notifications10DescriptionThree": {
-    "message": "NAKA-ON bilang default ang tampok sa pagtukoy ng token. Ngunit maaari mo itong i-disable mula sa Mga Setting."
+    "message": "NAKA-OFF bilang default ang tampok na pagtukoy ng token. Maaari mo itong paganahin mula sa Mga Setting."
   },
   "notifications10DescriptionTwo": {
     "message": "Kinuha namin ang mga token mula sa mga listahan ng mga token ng third party. Ang mga token na nakalista sa higit sa dalawang listahan ay awtomatikong matutukoy."
@@ -2883,6 +2920,9 @@
   "revealTheSeedPhrase": {
     "message": "Ipakita ang seed phrase"
   },
+  "reviewSpendingCap": {
+    "message": "I-review ang iyong limitasyon sa paggastos"
+  },
   "revokeAllTokensTitle": {
     "message": "Bawiin ang pahintulot na i-access ang lahat ng iyong $1?",
     "description": "$1 is the symbol of the token for which the user is revoking approval"
@@ -3078,6 +3118,9 @@
     "message": "Aprubahan ang $1 nang walang limitasyon sa paggastos",
     "description": "The token symbol that is being approved"
   },
+  "setSpendingCap": {
+    "message": "Magtakda ng limitasyon sa paggastos para sa iyong"
+  },
   "settings": {
     "message": "Mga Setting"
   },
@@ -3128,10 +3171,10 @@
     "message": "Ipakita ang mga Rekomendasyon"
   },
   "showTestnetNetworks": {
-    "message": "Ipakita ang mga test network"
+    "message": "Ipakita ang mga test networks"
   },
   "showTestnetNetworksDescription": {
-    "message": "Piliin ito para ipakita ang mga test network sa listahan ng network"
+    "message": "Piliin ito upang ipakita ang mga test networks sa listahan ng network"
   },
   "sigRequest": {
     "message": "Request na Paglagda"
@@ -3272,6 +3315,13 @@
   "spendLimitTooLarge": {
     "message": "Masyadong malaki ang limitasyon sa paggastos"
   },
+  "spendingCapError": {
+    "message": "Error: Maglagay lamang ng mga numero"
+  },
+  "spendingCapErrorDescription": {
+    "message": "Maglagay lamang ng numero na komportable kang i-access ng $1 ngayon o sa hinaharap. Palagi mong madadagdagan ang limitasyon ng token sa ibang pagkakataon.",
+    "description": "$1 is origin of the site requesting the token limit"
+  },
   "srpInputNumberOfWords": {
     "message": "Mayroon akong word phrase ng $1",
     "description": "This is the text for each option in the dropdown where a user selects how many words their secret recovery phrase has during import. The $1 is the number of words (either 12, 15, 18, 21, or 24)."
@@ -3321,7 +3371,7 @@
     "message": "Nakakonekta"
   },
   "statusNotConnected": {
-    "message": "Hindi nakakonekta"
+    "message": "Hindi konektado"
   },
   "step1LatticeWallet": {
     "message": "Siguruhin na ang iyong Lattice1 ay handang ikonekta"
@@ -4061,6 +4111,9 @@
   "turnOnTokenDetection": {
     "message": "I-on ang pinahusay na pag-detect ng token"
   },
+  "tutorial": {
+    "message": "Tutorial"
+  },
   "twelveHrTitle": {
     "message": "12 oras:"
   },
@@ -4143,6 +4196,9 @@
   "useCollectibleDetectionDescription": {
     "message": "Ang pagpapakita ng media at data ng mga NFT ay maaaring maglantad sa IP address sa iyong mga centralized server. Ang mga Third-party API (tulad ng OpenSea) ay ginagamit upang ma-detect ang mga NFT sa iyong wallet. Maglalantad ito sa iyong account address sa mga serbisyong iyon. Hayaan itong naka-disable kung ayaw mong kunin ng app ang data mula sa mga serbisyong iyon."
   },
+  "useDefault": {
+    "message": "Gamitin ang default"
+  },
   "usePhishingDetection": {
     "message": "Gumamit ng Pag-detect ng Phishing"
   },
@@ -4158,6 +4214,9 @@
   "userName": {
     "message": "Username"
   },
+  "verifyContractDetails": {
+    "message": "I-verify ang mga detalye ng kontrata"
+  },
   "verifyThisTokenDecimalOn": {
     "message": "Ang token decimal ay maaaring matagpuan sa $1",
     "description": "Points the user to etherscan as a place they can verify information about a token. $1 is replaced with the translation for \"etherscan\""
@@ -4170,6 +4229,9 @@
     "message": "I-verify ang token na ito sa $1 at siguruhin na ito ang token na gusto mong i-trade.",
     "description": "Points the user to etherscan as a place they can verify information about a token. $1 is replaced with the translation for \"etherscan\""
   },
+  "view": {
+    "message": "Tingnan"
+  },
   "viewAccount": {
     "message": "Tingnan ang Account"
   },
@@ -4178,6 +4240,9 @@
   },
   "viewContact": {
     "message": "Tingnan ang Contact"
+  },
+  "viewDetails": {
+    "message": "Tingnan ang mga detalye"
   },
   "viewFullTransactionDetails": {
     "message": "Tingnan ang buong detalye ng transaksyon"
